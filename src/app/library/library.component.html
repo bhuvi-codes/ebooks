@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row form-group">
+        <div class="col-md-1"></div>
+        <div *ngIf="!openbook" class="col-md-10">
+            <h3 class="text-center">Library</h3><br>
+            <div class="bg-light row" style="padding-top:15px;">
+                <div *ngIf="lbooks.length == 0">
+                    <p>There are no books in your library. Click <a href="/store">here</a> to visit the store !</p>
+                </div>
+                <div class="col-md-3 form-group" *ngFor="let book of lbooks; let i=index;">
+                    <div class="card">
+                        <div class="card-header">
+                            {{ book.title }}
+                        </div>
+                        <div class="card-body" (click)="open(book)">
+                            <img class="card-img-top" src="/assets/{{ book.image }}" alt="Card image cap">
+                        </div>
+                        <div class="card-footer">
+                           <button class="btn btn-danger btn-sm" (click)="remove(i)">Remove from Library</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf = "openbook" class="col-md-10 row">
+            <button class="btn btn-danger col-md-2" style="margin-bottom: 20px;" (click)="openbook=''">Back</button>
+            <h3 class="text-center col-md-8" style="margin-bottom: 20px;">{{openbook.title}}</h3>
+            <div class="card {{this.pageclass}}" *ngFor = "let page of openbook.pages | paginate: { itemsPerPage: numpage, currentPage: p }">
+                <div class="card-body {{background}}">
+                    {{page}}
+                </div>
+            </div>
+            <div class="col-md-12 text-center p-3">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>

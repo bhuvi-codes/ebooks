@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("../node_modules/bootstrap/dist/css/bootstrap.css");
+@import url("../node_modules/bootstrap/fa/css/all.css");
+
+body{
+    margin:0px;
+    padding-top:70px;
+}
+.bg-dark {
+    background-color: #d3247c !important;
+}
+.card-header {
+    background-color: #d3247c !important;
+    color:white;
+}
+.card-footer button{
+    background-color: #d3247c !important;
+    color:white;
+}

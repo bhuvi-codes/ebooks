@@ -1,0 +1,51 @@
+<div *ngIf = "!loggedin">
+  <div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <br><br>
+            <div class="card">
+                <div class="card-header bg-danger text-white"> Login</div>
+                <div class="card-body">
+                    <p class="text-center text-danger">{{msg}}</p>
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" class="form-control" [(ngModel)]="username">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" [(ngModel)]="pass">
+                    </div>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-danger" (click)="login()">Login</button>
+                </div>
+            </div>
+        </div><!--4 end here-->
+        <div class="col-md-4"></div>
+    </div>
+</div>
+</div>
+<div *ngIf = "loggedin">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="#"><img src="/assets/ebooks.png" style="width:50px;"> Books</a>
+  <div class=" navbar-collapse">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="library"><i class="fa fa-book"></i> Library</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="store"><i class="fa fa-shopping-bag"></i> Store</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="settings"><i class="fa fa-cog"></i> Settings</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link text-white" href="javascript:void(0)" (click)="logout()"><i class="fa fa-power-off"></i> Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+<router-outlet></router-outlet>
+</div>

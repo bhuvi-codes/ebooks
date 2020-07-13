@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row form-group">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h3 class="text-center">Top Picks for you</h3><br>
+            <div class="bg-light row" style="padding-top:15px;">
+                <div class="col-md-3 form-group" *ngFor="let book of storebooks">
+                    <div class="card">
+                        <div class="card-header">
+                            {{ book.title }}
+                        </div>
+                        <div class="card-body">
+                            <img class="card-img-top" src="/assets/{{ book.image }}" alt="Card image cap">
+                        </div>
+                        <div class="card-footer">
+                           <button class="btn btn-danger btn-sm" *ngIf="!book.added" (click)="add(book)">Add to Library</button>
+                           <button class="btn btn-danger btn-sm" *ngIf="book.added">Available in Library</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
