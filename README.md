@@ -50,5 +50,5 @@ Live Demo: https://ebooks.avpcloud.in
 
 Screenshot:
 
-![screenshot](ebook1.PNG)
-![screenshot](ebook2.PNG)
+![screenshot](ebooks1.PNG)
+![screenshot](ebooks2.PNG)
